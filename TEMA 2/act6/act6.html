@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 6</title>
+
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!--
+Actividad 6. Realiza un programa en JavaScript que calcule el área y el perímetro de una circunferencia de radio 5m. 
+A continuación, modifica dicho código para que el usuario pueda introducir el radio. Recuerda que para seleccionar un 
+elemento desde HTML debes usar la instancia document.getElementById(""). 
+Algunas funciones predefinidas necesarias/útiles para esta tarea son:
+
+document.getElementById('').value: devuelve el valor de un elemento HTML.
+
+parseFloat()
+
+Math.PI: devuelve el número real pi.
+
+El modificador .innerHTML que permite seleccionar un elemento HTML y modificar su contenido.
+
+toFixed(): permite redondear a un determinado número de decimales.
+-->
+
+    <form id="form">
+        <label for="radio">Introduce el radio</label>
+        <input id="radio-input"  type="number" name="radio" placeholder="00">
+        <button type="submit">Calcula el área y el perímetro</button>
+    </form>
+    
+    <div class="result">
+        <p class="result-text">El área es de <span id="area-result"></span> y el perimetro es de <span id="perimeter-result"></span></p>
+        <div class="circle"></div>
+    </div>
+</body>
+</html>

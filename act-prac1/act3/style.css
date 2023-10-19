@@ -1,0 +1,5 @@
+#myFPImage {
+    height: 300px;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
