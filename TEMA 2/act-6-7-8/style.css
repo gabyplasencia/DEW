@@ -29,6 +29,7 @@ body {
 }
 
 .wrapper {
+    width: 50%;
     border-radius: 15px;
     padding: 1rem 2rem;
     background-color: white;
@@ -39,7 +40,9 @@ body {
     border: none;
     font-family: inherit;
     font-size: 1rem;
+    margin-bottom: 1rem;
     padding: 0.5rem 1rem;
+    grid-column: 1 / -1;
     border-radius: 5px;
     background-color: rgba(231, 205, 255, 0.423);
     cursor: pointer;
@@ -63,14 +66,10 @@ body {
     color: rgb(162, 162, 162);
 }
 
-#form {
+.form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-}
-
-.radio-btn {
-    grid-column: 1 / -1;
 }
 
 .result {
@@ -94,7 +93,6 @@ body {
 
 .circle {
     display: none;
-    margin-top: 1rem;
     border-radius: 50%;
     height: 0px;
     aspect-ratio: 1;
@@ -119,3 +117,14 @@ body {
 }
 
 
+/* 
+************
+------ESTILOS ROMBO 
+************
+*/ 
+
+.rhombus {
+    text-align: center;
+    font-weight: 500;
+    line-height: 1;
+}

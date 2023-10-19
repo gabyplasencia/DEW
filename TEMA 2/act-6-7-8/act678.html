@@ -6,36 +6,20 @@
     <title>Actividad 6, 7 y 8</title>
 
     <script defer src="act6.js"></script>
+    <script defer src="act7.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-
-<!--
-Actividad 6. Realiza un programa en JavaScript que calcule el área y el perímetro de una circunferencia de radio 5m. 
-A continuación, modifica dicho código para que el usuario pueda introducir el radio. Recuerda que para seleccionar un 
-elemento desde HTML debes usar la instancia document.getElementById(""). 
-Algunas funciones predefinidas necesarias/útiles para esta tarea son:
-
-document.getElementById('').value: devuelve el valor de un elemento HTML.
-
-parseFloat()
-
-Math.PI: devuelve el número real pi.
-
-El modificador .innerHTML que permite seleccionar un elemento HTML y modificar su contenido.
-
-toFixed(): permite redondear a un determinado número de decimales.
--->
 <div class="container">
     <h1>Actividades 6, 7 y 8</h1>
 
     <div class="wrapper">
         <h2>Actividad 6</h2>
-        <form id="form">
+        <form class="form" id="form-six">
             <label for="radio">Introduce el radio</label>
             <input class="input" id="radio-input"  type="number" name="radio" placeholder="00">
-            <button class="btn radio-btn" type="submit">Calcula el área y el perímetro</button>
+            <button class="btn" type="submit">Calcula el área y el perímetro</button>
         </form>
         
         <div class="result">
@@ -44,6 +28,17 @@ toFixed(): permite redondear a un determinado número de decimales.
             <div class="circle">
                 <div class="line"><span id="area-circle">5m</span></div>
             </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Actividad 7</h2>
+        <form class="form" id="form-seven">
+            <label for="rows">Introduce el número de filas</label>
+            <input class="input" id="rows-input"  type="number" name="rows" placeholder="00">
+            <button class="btn" type="submit">Aceptar</button>
+        </form>
+        <div class="rhombus" id="rhombus"></div>
         </div>
     </div>
 
