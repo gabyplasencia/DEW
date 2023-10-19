@@ -73,6 +73,12 @@ body {
     grid-column: 1 / -1;
 }
 
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .result-text {
     display: none;
     margin-top: 1rem;
@@ -84,6 +90,32 @@ body {
 
 .result-text.show {
     display: block;
+}
+
+.circle {
+    display: none;
+    margin-top: 1rem;
+    border-radius: 50%;
+    height: 0px;
+    aspect-ratio: 1;
+    background-color: rgb(215, 172, 255);
+    transition: all 300ms;
+}
+
+.line {
+    height: 2px;
+    width: 50%;
+    background-color: black;
+    position: relative;
+}
+
+#area-circle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    translate: -50%;
 }
 
 
