@@ -2,6 +2,7 @@ const radioInput = document.getElementById('radio-input');
 
 const areaText = document.getElementById('area-result');
 const perimeterText = document.getElementById('perimeter-result');
+const resultText = document.querySelector('.result-text');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -16,13 +17,13 @@ form.addEventListener('submit', e => {
 const setArea = (area) => {
 
     let areaResult = Number.parseFloat(area).toFixed(1);
-    areaText.innerHTML = areaResult;
+    areaText.innerHTML = areaResult + 'm';
   }
 
 const setPerimeter = (perimeter) => {
 
     let perimeterResult = Number.parseFloat(perimeter).toFixed(1);
-    perimeterText.innerHTML = perimeterResult;
+    perimeterText.innerHTML = perimeterResult + 'm';
 
   }
 
@@ -33,5 +34,6 @@ const circleCalculation = (radio) => {
     
     setArea(area);
     setPerimeter(perimeter);
-
+    
+    resultText.classList.add('show');
 }

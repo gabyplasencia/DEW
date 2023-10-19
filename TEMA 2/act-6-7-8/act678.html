@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 6</title>
+    <title>Actividad 6, 7 y 8</title>
 
-    <script defer src="script.js"></script>
+    <script defer src="act6.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -27,16 +27,24 @@ El modificador .innerHTML que permite seleccionar un elemento HTML y modificar s
 
 toFixed(): permite redondear a un determinado número de decimales.
 -->
+<div class="container">
+    <h1>Actividades 6, 7 y 8</h1>
 
-    <form id="form">
-        <label for="radio">Introduce el radio</label>
-        <input id="radio-input"  type="number" name="radio" placeholder="00">
-        <button type="submit">Calcula el área y el perímetro</button>
-    </form>
-    
-    <div class="result">
-        <p class="result-text">El área es de <span id="area-result"></span> y el perimetro es de <span id="perimeter-result"></span></p>
-        <div class="circle"></div>
+    <div class="wrapper">
+        <h2>Actividad 6</h2>
+        <form id="form">
+            <label for="radio">Introduce el radio</label>
+            <input class="input" id="radio-input"  type="number" name="radio" placeholder="00">
+            <button class="btn radio-btn" type="submit">Calcula el área y el perímetro</button>
+        </form>
+        
+        <div class="result">
+            <p class="result-text">El área es de <span id="area-result"></span> y el perimetro es de <span id="perimeter-result"></span></p>
+            <div class="circle"></div>
+        </div>
     </div>
+
+</div>
+
 </body>
 </html>
