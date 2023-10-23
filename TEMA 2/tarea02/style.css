@@ -82,3 +82,8 @@ h2 {
 #table.show {
     display: block;
 }
+
+.table-wrapper {
+    margin-top: 1.5rem;
+    text-align: left;
+}
