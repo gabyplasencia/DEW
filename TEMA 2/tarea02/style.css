@@ -35,7 +35,7 @@ body {
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
     padding: 2rem 4rem;
-    width: 30vw;
+    width: 40vw;
 
     box-shadow: 0 0 5px 1px rgba(73, 73, 73, 0.645);
 }
@@ -45,23 +45,17 @@ h2 {
     font-weight: 500;
 }
 
-/* .btn-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-} */
-
 .btn {
     font-family: inherit;
     color: white;
     border: none;
     border-radius: 10px;
-    width: 70%;
+    width: 80%;
     background-color: rgb(29, 55, 70);
     margin-top: 1rem;
     padding: 1rem 2rem;
     cursor: pointer;
-    transition: all 200ms, ;
+    transition: all 200ms ;
 }
 
 .btn:hover {
@@ -69,6 +63,27 @@ h2 {
 }
 
 .btn:active {
+    opacity: 1;
+    scale: 0.99;
+}
+
+.btn--cal {
+    font-family: inherit;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(29, 55, 70);
+    padding: 1rem 2rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: all 200ms ;
+}
+
+.btn--cal:hover {
+    opacity: 0.8;
+}
+
+.btn--cal:active {
     opacity: 1;
     scale: 0.99;
 }
@@ -86,4 +101,32 @@ h2 {
 .table-wrapper {
     margin-top: 1.5rem;
     text-align: left;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+input {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    font-family: inherit;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 950px) {
+    .container {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    
+    .wrapper {
+        padding: 2rem 1rem;
+        width: 80vw;
+    }
 }
