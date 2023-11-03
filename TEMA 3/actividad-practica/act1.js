@@ -14,7 +14,18 @@ código postal, localidad y municipio) así como teléfono y correo electrónico
 
 Una vez validador el formulario los resultados se mostrarán en la ventana principal.*/
 
-var formTab;
+let formTab;
+const btnHome = document.querySelector('.btn-home');
+const info = document.querySelector('.info');
+
+let nameDisplay = document.getElementById('name-display');
+let lastnameDisplay = document.getElementById('lastname-display');
+let adressDisplay = document.getElementById('adress-display');
+let postcodeDisplay = document.getElementById('postcode-display');
+let townDisplay = document.getElementById('town-display');
+let cityDisplay = document.getElementById('city-display');
+let phoneDisplay = document.getElementById('phone-display');
+let emailDisplay = document.getElementById('email-display');
 
 function openForm() {
 
@@ -38,11 +49,35 @@ let consent = window.confirm("El formulario se abrira en una ventana nueva. ¿De
 
 }
 
-const form = document.getElementById('form');
+if(localStorage.getItem('success') == true) {
+    window.location.reload();
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
+    window.addEventListener('load', () => {
+        let name = localStorage.getItem('name');
+        let lastname = localStorage.getItem('lastname');
+        let adress = localStorage.getItem('adress');
+        let postcode = localStorage.getItem('postcode');
+        let town = localStorage.getItem('town');
+        let city = localStorage.getItem('city');
+        let phone = localStorage.getItem('phone');
+        let email = localStorage.getItem('email');
     
-    //setValues();
-    formTab.close();
-});
+        nameDisplay.innerHTML = name;
+        lastnameDisplay.innerHTML = lastname;
+        adressDisplay.innerHTML = adress;
+        postcodeDisplay.innerHTML = postcode;
+        townDisplay.innerHTML = town;
+        cityDisplay.innerHTML = city;
+        phoneDisplay.innerHTML = phone;
+        emailDisplay.innerHTML = email;
+    
+    })
+
+    btnHome.classList.add('hidden');
+    info.classList.add('show');
+
+    localStorage.setItem('success', false);
+
+    console.log('carga');
+}
+

@@ -6,7 +6,7 @@
     <title>Formulario de registro</title>
 
     <link rel="stylesheet" href="style.css">
-    <script defer src="act1.js"></script>
+    <script defer src="form.js"></script>
 </head>
 <body class="body2">
 
@@ -16,11 +16,11 @@
 
             <div class="input-group">
                 <label for="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="María" required>
+                <input type="text" name="name" id="name" placeholder="María">
             </div>
             <div class="input-group">
                 <label for="lastname">Apellidos</label>
-                <input type="text" name="lastname" id="lastname" placeholder="Gómez Herrera" required>
+                <input type="text" name="lastname" id="lastname" placeholder="Gómez Herrera">
             </div>
             <div class="grid-adress">            
                 <div class="input-group">
@@ -29,24 +29,24 @@
                 </div>
                 <div class="input-group">
                     <label for="postcode">Código Postal</label>
-                    <input type="number" name="postcode" id="postcode" placeholder="38000">
+                    <input type="number" name="postcode" id="postcode" minlength="5" maxlength="5" placeholder="38000">
                 </div>
                 <div class="input-group">
-                    <label for="area">Localidad</label>
-                    <input type="text" name="area" id="area" placeholder="La Orotava">
+                    <label for="town">Localidad</label>
+                    <input type="text" name="town" id="town" placeholder="La Orotava">
                 </div>
                 <div class="input-group">
                     <label for="city">Municipio</label>
-                    <input type="text" name="city" id="city" placeholder="Santa Cruz de Tenerife" required>
+                    <input type="text" name="city" id="city" placeholder="Santa Cruz de Tenerife">
                 </div>
             </div>
             <div class="input-group">
                 <label for="phone">Teléfono</label>
-                <input type="tel" name="phone" id="phone" minlength="9" maxlength="9" placeholder="655 55 55 55" required>
+                <input type="tel" name="phone" id="phone" minlength="9" maxlength="9" placeholder="655 55 55 55">
             </div>
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="maria@gmail.com" required>
+                <input type="email" name="email" id="email" placeholder="maria@gmail.com">
             </div>
     
             <button class="btn btn-submit" type="submit">Enviar</button>

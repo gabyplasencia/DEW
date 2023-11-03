@@ -101,13 +101,15 @@ h2 {
     align-self: center;
 }
 
-label {
+label,
+h4 {
     color: white;
     font-weight: 700;
     margin-bottom: 0.2rem;
 }
 
-input {
+input,
+p {
     border: none;
     width: 100%;
     color: rgb(13, 8, 65);
@@ -124,6 +126,14 @@ input {
     font-size: 1rem;
     width: fit-content;
     align-self: center;
+}
+
+.info {
+    display: none;
+}
+
+.info.show {
+    display: block;
 }
 
 /* @media (max-width: 950px) {
