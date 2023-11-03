@@ -33,13 +33,7 @@ function openForm() {
 let consent = window.confirm("El formulario se abrira en una ventana nueva. ¿Desea continuar?");
 
     if(consent == true) {
-
-        let windowWidth = 600;
-        let windowHeight = 700;
-        let left = (window.screen.width - windowWidth) / 2;
-        let top = (window.screen.height - windowHeight) / 2;
-    
-        //let features = "width=" + windowWidth + ",height=" + windowHeight + ",left=" + left + ",top=" + top;
+        
         let url = "http://127.0.0.1:5500/TEMA%203/actividad-practica/act1/form.html";
     
         formTab = window.open(url, "_self");
