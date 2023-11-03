@@ -16,6 +16,7 @@ Una vez validador el formulario los resultados se mostrarán en la ventana princ
 
 let formTab;
 const btnHome = document.querySelector('.btn-home');
+const btnRefresh = document.querySelector('.btn-refresh');
 const info = document.querySelector('.info');
 
 let nameDisplay = document.getElementById('name-display');
@@ -38,10 +39,10 @@ let consent = window.confirm("El formulario se abrira en una ventana nueva. ¿De
         let left = (window.screen.width - windowWidth) / 2;
         let top = (window.screen.height - windowHeight) / 2;
     
-        let features = "width=" + windowWidth + ",height=" + windowHeight + ",left=" + left + ",top=" + top;
+        //let features = "width=" + windowWidth + ",height=" + windowHeight + ",left=" + left + ",top=" + top;
         let url = "http://127.0.0.1:5500/TEMA%203/actividad-practica/form.html";
     
-        formTab = window.open(url, "VentanaEmergente", features);
+        formTab = window.open(url, "_self");
 
     } else {
         alert("No se pudo completar el registro");
@@ -49,10 +50,27 @@ let consent = window.confirm("El formulario se abrira en una ventana nueva. ¿De
 
 }
 
-if(localStorage.getItem('success') == true) {
-    window.location.reload();
+function refresh() {
 
-    window.addEventListener('load', () => {
+    btnHome.classList.remove('hidden');
+    info.classList.remove('show'); 
+    btnRefresh.classList.add('hidden');
+
+    localStorage.removeItem('name');
+    localStorage.removeItem('lastname');
+    localStorage.removeItem('adress');
+    localStorage.removeItem('postcode');
+    localStorage.removeItem('town');
+    localStorage.removeItem('city');
+    localStorage.removeItem('phone');
+    localStorage.removeItem('email');
+    localStorage.removeItem('success');
+    
+}
+
+
+window.addEventListener('load', () => {
+
         let name = localStorage.getItem('name');
         let lastname = localStorage.getItem('lastname');
         let adress = localStorage.getItem('adress');
@@ -61,6 +79,14 @@ if(localStorage.getItem('success') == true) {
         let city = localStorage.getItem('city');
         let phone = localStorage.getItem('phone');
         let email = localStorage.getItem('email');
+        let success = localStorage.getItem('success');
+
+        if(success) {
+            btnHome.classList.add('hidden');
+            info.classList.add('show');  
+            btnRefresh.classList.remove('hidden'); 
+            console.log('entra if')
+        }
     
         nameDisplay.innerHTML = name;
         lastnameDisplay.innerHTML = lastname;
@@ -70,14 +96,10 @@ if(localStorage.getItem('success') == true) {
         cityDisplay.innerHTML = city;
         phoneDisplay.innerHTML = phone;
         emailDisplay.innerHTML = email;
-    
-    })
+        console.log('entra load')
 
-    btnHome.classList.add('hidden');
-    info.classList.add('show');
+})
 
-    localStorage.setItem('success', false);
 
-    console.log('carga');
-}
+
 

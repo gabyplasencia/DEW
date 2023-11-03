@@ -22,5 +22,6 @@ form.addEventListener('submit', e => {
     localStorage.setItem('email', emailInput);
     localStorage.setItem('success', true);
 
+    window.location.href = "act1.html"
 });
 
