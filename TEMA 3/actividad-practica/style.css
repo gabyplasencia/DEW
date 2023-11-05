@@ -162,6 +162,23 @@ p {
     transition: all 200ms ;
 }
 
+.time {
+    font-size: 4rem;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+.countdown__wrapper {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 6rem;
+    aspect-ratio: 1;
+    background-color: hsl(0, 0%, 100%, 0.36);
+}
+
 /* @media (max-width: 950px) {
     .container {
         width: 95%;

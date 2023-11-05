@@ -1,53 +1,47 @@
 /*Actividad 3.
 Crea una web que permita al usuario establecer una fecha y hora para una cuenta atrás.*/
 
-window.onload = () => {
-    document.querySelector('#calculate').onclick = calculate;
-    document.querySelector('#reset').onclick = reset;
+const second = 1000;
+const minute = second * 60;
+const hour = minute * 60;
+const day = hour * 24;
+
+const init = () => {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", countdown);
+}
+const countdown = (e) => {
+    e.preventDefault();
+    const dateInput = document.getElementById("date").value;
+
+    setCountdown(dateInput);
+    window.onload = setInterval(() => setCountdown(dateInput), 1000); 
 }
 
-function calculate () {
-    const date = document.querySelector("#date").value;
-    const time = document.querySelector("#time").value;
+const setCountdown = (dateInput) => {
+    const dateSelected = new Date(dateInput);
+    const today = new Date();
 
-    const stop = document.querySelector('#stop');
-    
-    const endTime = new Date(date + " " + time);
+    const days = document.getElementById('countdown-days');
+    const hours = document.getElementById('countdown-hours');
+    const minutes = document.getElementById('countdown-minutes');
+    const seconds = document.getElementById('countdown-seconds');
 
-    const interval = setInterval(() => calculateTime(endTime), 1000);
+    if (dateSelected > today) {
+        const timeLeft = (dateSelected - today);
 
-    stop.addEventListener('click', () => {
-        clearInterval(interval);
-    })
-}
+        days.innerText = Math.floor(timeLeft / day);
+        hours.innerText = Math.floor((timeLeft % day) / hour);
+        minutes.innerText = Math.floor((timeLeft % hour) / minute);
+        seconds.innerText = Math.floor((timeLeft % minute) / second);
 
-function calculateTime(endTime) {
-    const currentTime = new Date();
-
-    const days = document.querySelector('#countdown-days');
-    const hours = document.querySelector('#countdown-hours');
-    const minutes = document.querySelector('#countdown-minutes');
-    const seconds = document.querySelector('#countdown-seconds');
-
-    if (endTime > currentTime) {
-        const timeLeft = (endTime - currentTime) / 1000;
-
-        console.log(timeLeft);
-        days.innerText = Math.floor(timeLeft / (24 * 60 * 60));
-        hours.innerText = Math.floor((timeLeft / (60 * 60)) % 24);
-        minutes.innerText = Math.floor((timeLeft / 60) % 60);
-        seconds.innerText = Math.floor(timeLeft % 60);
-    } else {
+    }/* else {
         days.innerText = 0
         hours.innerText = 0
         minutes.innerText = 0
         seconds.innerText = 0
-    }
+    }*/
 }
 
-function reset() {
-    document.querySelector('#countdown-days').innerText = 0;
-    document.querySelector('#countdown-hours').innerText = 0;
-    document.querySelector('#countdown-minutes').innerText = 0;
-    document.querySelector('#countdown-seconds').innerText = 0;
-}
+window.addEventListener('DOMContentLoaded', init);
+
