@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    background: linear-gradient(130deg, rgb(197, 146, 255), rgb(255, 127, 98), rgb(255, 239, 91));
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.body2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+h1,
+h2 {
+    font-weight: 500;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: min(80% , 1200px);
+    margin: 2rem auto;
+}
+
+.btn {
+    font-family: inherit;
+    color: rgb(13, 8, 65);
+    font-size: 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(199, 255, 125);
+    margin-top: 1rem;
+    padding: 1em 2.2em;
+    cursor: pointer;
+    transition: all 200ms ;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+}
+
+.btn:active {
+    opacity: 0.9;
+    scale: 0.99;
+}
+
+.wrapper {
+    /*width: min(90vw, 35rem);*/
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 64%, 0.25);  
+    margin: 3rem;
+    backdrop-filter: blur(1rem);      
+    box-shadow: 0 0 20px 1px hsl(0, 0%, 100%, 0.36);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem min(2rem, 5vw);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.input-group,
+.info-group {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 0.4fr 1.2fr;
+    margin-top: 1.5rem;
+}
+
+.form-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+label,
+h4 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+input,
+p {
+    border: none;
+    width: 100%;
+    color: rgb(13, 8, 65);
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.6rem;
+    background-color: hsl(0, 0%, 100%, 0.36);
+}
+
+*::placeholder {
+    color: rgb(88, 88, 88);
+}
+
+/* @media (max-width: 950px) {
+    .container {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    
+    .wrapper {
+        padding: 2rem 1rem;
+        width: 80vw;
+    }
+} */

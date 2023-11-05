@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Tema 3</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <button class="btn" onclick="openSecondPage()">Click</button>
+
+    <div class="wrapper">
+        <form id="form" class="form">
+            <h1 class="form-title">Registrate</h1>
+
+                <div class="input-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" placeholder="María" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastname">Apellidos</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Gómez Herrera" required>
+                </div>
+                <div class="input-group">
+                    <label for="adress">Dirección</label>
+                    <input type="text" name="adress" id="adress" placeholder="Calle nº" required>
+                </div>
+                <div class="input-group">
+                    <label for="postcode">Código Postal</label>
+                    <input type="number" name="postcode" id="postcode" minlength="5" maxlength="5" placeholder="38000" required>
+                </div>
+                <div class="input-group">
+                    <label for="town">Localidad</label>
+                    <input type="text" name="town" id="town" placeholder="La Orotava" required>
+                </div>
+                <div class="input-group">
+                    <label for="city">Municipio</label>
+                    <input type="text" name="city" id="city" placeholder="Santa Cruz de Tenerife" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" name="phone" id="phone" minlength="9" maxlength="9" placeholder="655 55 55 55" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="maria@gmail.com" required>
+                </div>
+    
+            <button class="btn btn-submit" type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div class="wrapper info">
+        <h1 class="form-title">Tu información</h1>
+        
+            <div class="info-group">
+                <h4 class="info-title">Nombre</h4>
+                <p id="name-display"></p>
+            </div>
+            <div class="info-group">
+                <h4 class="info-title">Apellidos</h4>
+                <p id="lastname-display"></p>               
+            </div>
+            <div class="info-group">
+                <h4 class="info-title">Dirección</h4>
+                <p id="adress-display"></p>                
+            </div>
+            <div class="info-group">
+                <h4 class="info-title">Código Postal</h4>
+                <p id="postcode-display"></p>               
+            </div>
+            <div class="info-group">
+                <h4 class="info-title">Localidad</h4>
+                <p id="town-display"></p>              
+            </div>
+            <div class="info-group">
+                <h4 class="info-title">Municipio</h4>
+                <p id="city-display"></p>               
+            </div>
+            <div class="info-group">
+                <h4 class="info-title">Teléfono</h4>
+                <p id="phone-display"></p>                
+            </div>
+            <div class="info-group">
+                <h4 class="info-title">Email</h4>
+                <p id="email-display"></p>              
+            </div>
+    </div>
+</body>
+</html>
