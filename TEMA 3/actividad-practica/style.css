@@ -72,7 +72,7 @@ h2 {
 }
 
 .wrapper {
-    width: min(90vw, 26rem);
+    width: min(90vw, 35rem);
     border-radius: 5px;
     background-color: hsl(0, 0%, 64%, 0.25);  
     margin: 3rem;
@@ -85,7 +85,8 @@ h2 {
     padding: 1.5rem min(3rem, 5vw);
 }
 
-.grid-adress {
+.grid-adress,
+.grid-count {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -145,6 +146,20 @@ p {
 
 .info.show {
     display: block;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.btn-count {
+    font-size: 1.5rem;
+    width: fit-content;
+    align-self: center;
+    transition: all 200ms ;
 }
 
 /* @media (max-width: 950px) {

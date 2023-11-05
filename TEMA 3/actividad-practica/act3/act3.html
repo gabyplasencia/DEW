@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="act3.js"></script>
+</head>
+
+<body class="body1">
+    <div class="wrapper">
+        <h1>Cuenta atrás</h1>
+        <form id="form" class="form">
+    
+            <div class="grid-count">
+                <div class="input-group">
+                    <label for="date">Elige una fecha</label>
+                    <input type="date" id="date">           
+                </div>
+                <div class="input-group">
+                    <label for="time">Elige una hora</label>
+                    <input type="time" id="time">          
+                </div>
+            </div>
+    
+            <button class="btn btn-count" id="calculate" onclick="countDown()">Calcular</button>
+        </form>
+    
+        <div class="countdown">
+            <div class="countdown__group">
+                <h4 class="countdown__heading">DAY</h4>
+                <div class="countdown__wrapper">
+                    <p class="time" id="countdown-days">0</p>
+                </div>
+            </div>
+            <div class="countdown__group">
+                <h4 class="countdown__heading">HOURS</h4>
+                <div class="countdown__wrapper">
+                    <p class="time" id="countdown-hours">0</p>
+                </div>
+            </div>
+            <div class="countdown__group">
+                <h4 class="countdown__heading">MINUTES</h4>
+                <div class="countdown__wrapper">
+                    <p class="time" id="countdown-minutes">0</p>
+                </div>
+            </div>
+            <div class="countdown__group">
+                <h4 class="countdown__heading">SECONDS</h4>
+                <div class="countdown__wrapper">
+                    <p class="time" id="countdown-seconds">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
