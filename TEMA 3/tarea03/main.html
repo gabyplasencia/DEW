@@ -9,84 +9,54 @@
     <script defer src="main.js"></script>
 </head>
 <body>
-    <button class="btn" onclick="openSecondPage()">Click</button>
+    <button class="btn btn-click" onclick="openSecondPage()">Click</button>
+    <button class="btn btn-refresh hidden" onclick="refresh()">Reiniciar</button>
 
-    <div class="wrapper">
+    <div class="wrapper wrapper2 hidden">
         <form id="form" class="form">
-            <h1 class="form-title">Registrate</h1>
+            <h1 class="form-title">Introduce los siguientes datos</h1>
 
-                <div class="input-group">
+                <div class="input-group-main">
                     <label for="name">Nombre</label>
                     <input type="text" name="name" id="name" placeholder="María" required>
                 </div>
-                <div class="input-group">
-                    <label for="lastname">Apellidos</label>
-                    <input type="text" name="lastname" id="lastname" placeholder="Gómez Herrera" required>
+                <div class="input-group-main">
+                    <label for="lastname">Apellido</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Herrera" required>
                 </div>
-                <div class="input-group">
-                    <label for="adress">Dirección</label>
-                    <input type="text" name="adress" id="adress" placeholder="Calle nº" required>
-                </div>
-                <div class="input-group">
-                    <label for="postcode">Código Postal</label>
-                    <input type="number" name="postcode" id="postcode" minlength="5" maxlength="5" placeholder="38000" required>
-                </div>
-                <div class="input-group">
-                    <label for="town">Localidad</label>
-                    <input type="text" name="town" id="town" placeholder="La Orotava" required>
-                </div>
-                <div class="input-group">
-                    <label for="city">Municipio</label>
-                    <input type="text" name="city" id="city" placeholder="Santa Cruz de Tenerife" required>
-                </div>
-                <div class="input-group">
-                    <label for="phone">Teléfono</label>
-                    <input type="tel" name="phone" id="phone" minlength="9" maxlength="9" placeholder="655 55 55 55" required>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="maria@gmail.com" required>
+                <div class="grid-form">
+                    <div class="input-group-main">
+                        <label for="birth-day">Día de nacimiento</label>
+                        <input type="number" name="birth-day" id="birth-day" minlength="1" maxlength="2" placeholder="1-31" required>
+                    </div>
+                    <div class="input-group-main">
+                        <label for="birth-month">Mes de nacimiento</label>
+                        <input type="number" name="birth-month" id="birth-month" minlength="1" maxlength="2" placeholder="1-12" required>
+                    </div>
+                    <div class="input-group-main">
+                        <label for="birth-year">Año de nacimiento</label>
+                        <input type="number" name="birth-year" id="birth-year" minlength="4" maxlength="4" placeholder="1995" required>
+                    </div>
                 </div>
     
             <button class="btn btn-submit" type="submit">Enviar</button>
         </form>
     </div>
 
-    <div class="wrapper info">
+    <div class="wrapper info hidden">
         <h1 class="form-title">Tu información</h1>
         
-            <div class="info-group">
-                <h4 class="info-title">Nombre</h4>
-                <p id="name-display"></p>
-            </div>
-            <div class="info-group">
-                <h4 class="info-title">Apellidos</h4>
-                <p id="lastname-display"></p>               
-            </div>
-            <div class="info-group">
-                <h4 class="info-title">Dirección</h4>
-                <p id="adress-display"></p>                
-            </div>
-            <div class="info-group">
-                <h4 class="info-title">Código Postal</h4>
-                <p id="postcode-display"></p>               
-            </div>
-            <div class="info-group">
-                <h4 class="info-title">Localidad</h4>
-                <p id="town-display"></p>              
-            </div>
-            <div class="info-group">
-                <h4 class="info-title">Municipio</h4>
-                <p id="city-display"></p>               
-            </div>
-            <div class="info-group">
-                <h4 class="info-title">Teléfono</h4>
-                <p id="phone-display"></p>                
-            </div>
-            <div class="info-group">
-                <h4 class="info-title">Email</h4>
-                <p id="email-display"></p>              
-            </div>
+                <p>Buenos días! <span id="name-display"></span> <span id="lastname-display"></span></p>
+                <p>Tu nombre tiene <span id="name-char"></span> caracteres, incluidos espacios</p>               
+                <p>La primera letra A de tu nombre está en la posición: <span id="first-a"></span></p>                
+                <p>La última letra A de tu nombre está en la posición: <span id="last-a"></span></p>               
+                <p>Tu nombre menos las 3 primeras letras es: <span id="minus-first3"></span></p>              
+                <p>Tu nombre todo en mayúsculas es: <span id="name-upper"></span></p>               
+                <p>Tu edad es: <span id="age"></span> años</p>                
+                <p>Naciste un feliz <span id="day-display"></span> de <span id="month-display"></span> del año <span id="year-display"></span></p> 
+                <p>El coseno de 180 es: <span id="cos"></span></p> 
+                <p>El número mayor de (34,67,23,75,35,19) es: <span id="bigger-num"></span></p> 
+                <p>Ejemplo de número al azar: <span id="random-num"></span></p>              
     </div>
 </body>
 </html>

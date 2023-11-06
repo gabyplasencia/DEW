@@ -22,6 +22,8 @@ const setInfo = () => {
     } else {
     java.innerHTML = "JAVA NO esta disponible en esta ventana"
     }
+
+    localStorage.setItem('success', true);
 }
 
 setInfo();
