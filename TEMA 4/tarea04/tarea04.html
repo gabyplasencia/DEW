@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Tema 4</title>
+    <script defer src="tarea04.js"></script>
+</head>
+<body>
+
+    <h1>ENUNCIADO</h1>
+    <p>Queremos hacer una aplicación en JavaScript para gestionar edificios con la información de la <br>
+        situación del edificio y de los propietarios de cada piso. Para ello queremos almacenar la siguiente información de cada edificio:</p>
+        <ul>
+            <li>calle</li>
+            <li>número</li>
+            <li>código postal</li>
+            <li>plantas del edificio (dentro de cada planta tendremos un número <br>
+                de puertas y para cada puerta almacenaremos el nombre del propietario).</li>
+        </ul>
+    <p>Se pide:</p>
+    <p>Crear un objeto que nos permita instanciar edificios. Cada vez que instanciemos un edificio le pasaremos <br>
+        la calle, número y código postal como parámetros. </p>
+    <p>Se pide además crear los siguientes métodos para el objeto Edificio:</p>
+        <ul>
+            <li>agregarPlantasYPuertas(numplantas, puertas) <br>
+                Se le pasa el número de plantas que queremos crear en el piso y el número de puertas por planta. <br>
+                Cada vez que se llame a este método, añadirá el número de plantas y puertas indicadas en los parámetros, <br>
+                a las que ya están creadas en el edificio.</li>
+            <li>modificarNumero(numero) <br> Se le pasa el nuevo número del edificio para que lo actualice.</li>
+            <li>modificarCalle(calle) <br> Se le pasa el nuevo nombre de la calle para que lo actualice.</li>
+            <li>modificarCodigoPostal(codigo) <br> Se le pasa el nuevo número de código postal del edificio.</li>
+            <li>imprimeCalle <br> Devuelve el nombre de la calle del edificio.</li>
+            <li>imprimeNumero <br> Devuelve el número del edificio.</li>
+            <li>imprimeCodigoPostal <br> Devuelve el código postal del edificio.</li>
+            <li>agregarPropietario(nombre,planta,puerta) <br> Se le pasa un nombre de propietario, un número de planta y un número de puerta y lo asignará como propietario de ese piso.</li>
+            <li>imprimePlantas <br> Recorrerá el edificio e imprimirá todos los propietarios de cada puerta.</li>
+        </ul>
+    <p>Cada vez que se crea un edificio que muestre automáticamente un mensaje del estilo: <br>
+        construido nuevo edificio en calle: xxxxxx, nº: xx, CP: xxxxx.</p>
+    <p>Cada vez que se añada un propietario a un piso de un edificio que muestre un mensaje del estilo: <br>
+        xxxxxxxx es ahora el propietario de la puerta x de la planta x.</p>
+    
+</body>
+</html>
