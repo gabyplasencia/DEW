@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 1%, 44%);
+    --black: hsl(0, 0%, 8%);
+}
+
+body {
+    background-color: rgb(202, 202, 202);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    padding: 1.8rem;
+    background-color: white;
+    border-radius: 20px;
+    border-bottom-right-radius: 70px;
+}
+
+#form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form__group {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+input {
+    margin-top: 0.1rem;
+    font-family: inherit;
+    height: 1.5rem;
+    padding: 0.2rem 0.4rem;
+    font-weight: 500;
+    color: black;
+    border: solid 1px rgb(202, 202, 202);
+    border-radius: 3px;
+}
+
+input:focus {
+    outline-style: none;
+}
+
+input:hover {
+    border-color: hsl(259, 100%, 65%);
+}
+
+input::placeholder {
+    font-weight: 500;
+    color: grey;
+}
+
+select {
+    border: none;
+    margin-top: 0.1rem;
+    font-family: inherit;
+    height: 1.5rem;
+    padding: 0.2rem 0.4rem;
+    font-weight: 500;
+    color: black;
+    border: solid 1px rgb(202, 202, 202);
+    border-radius: 3px;
+}
+
+select:focus {
+    outline-style: none;
+}
+
+select:hover {
+    border-color: hsl(259, 100%, 65%);
+}
+
+.form__btn-group {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.button {
+    border: none;
+    background-color: hsl(259, 100%, 65%);
+    font-family: inherit;
+    color: white;
+    padding: 0.5rem 0.9rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: hsl(259, 79%, 38%);
+}
+
+@media (max-width: 800px) {
+    #form {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+        width: 85vw;
+    }
+}
