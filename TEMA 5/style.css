@@ -6,27 +6,21 @@
     box-sizing: border-box;
 }
 
-:root {
-    --purple: hsl(259, 100%, 65%);
-    --light-red: hsl(0, 100%, 67%);
-    --white: hsl(0, 0%, 100%);
-    --grey: hsl(0, 1%, 44%);
-    --black: hsl(0, 0%, 8%);
-}
-
 body {
     background-color: rgb(202, 202, 202);
     display: grid;
     place-content: center;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
 }
 
 .container {
-    padding: 1.8rem;
+    max-width: 600px;
+    padding: 3rem;
     background-color: white;
     border-radius: 20px;
-    border-bottom-right-radius: 70px;
+    border-top-left-radius: 70px;
 }
 
 #form {
@@ -43,8 +37,9 @@ body {
 input {
     margin-top: 0.1rem;
     font-family: inherit;
-    height: 1.5rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+    height: 2rem;
+    padding: 0.4rem 0.6rem;
     font-weight: 500;
     color: black;
     border: solid 1px rgb(202, 202, 202);
@@ -68,8 +63,9 @@ select {
     border: none;
     margin-top: 0.1rem;
     font-family: inherit;
-    height: 1.5rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+    height: 2rem;
+    padding: 0.1rem 0.6rem;
     font-weight: 500;
     color: black;
     border: solid 1px rgb(202, 202, 202);
@@ -95,6 +91,7 @@ select:hover {
     border: none;
     background-color: hsl(259, 100%, 65%);
     font-family: inherit;
+    font-size: inherit;
     color: white;
     padding: 0.5rem 0.9rem;
     border-radius: 3px;
@@ -103,6 +100,25 @@ select:hover {
 
 .button:hover {
     background-color: hsl(259, 79%, 38%);
+}
+
+.form__group.error > label{
+    color: hsl(0, 100%, 67%);
+}
+
+.form__group.error > input{
+    border-color: hsl(0, 100%, 67%);
+}
+
+.form__group.error > select{
+    border-color: hsl(0, 100%, 67%);
+}
+
+.error-message {
+    color: hsl(0, 100%, 67%);
+    font-size: 0.7rem;
+    font-style: italic;
+    margin-top: 0.1rem;
 }
 
 @media (max-width: 800px) {

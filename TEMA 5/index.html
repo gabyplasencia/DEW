@@ -10,7 +10,7 @@
 </head>
 <body>
         <div class="container">
-            <form id="form">
+            <form name="formulario" id="form" action="http://www.google.es" method="get">
 
                 <div class="form__group">
                     <label for="nombre">Nombre</label>
@@ -20,13 +20,13 @@
 
                 <div class="form__group">
                     <label for="apellidos">Apellidos</label>
-                    <input type="text" name="apellidos" id="apellidos" placeholder="Gómez">
+                    <input type="text" name="apellidos" id="apellidos" placeholder="Gómez Pérez">
                     <div class="error-message"></div>
                 </div>
 
                 <div class="form__group">
                     <label for="edad">Edad</label>
-                    <input type="number" name="edad" id="edad" maxlength="3" placeholder="25">
+                    <input type="text" name="edad" id="edad" maxlength="3" placeholder="25">
                     <div class="error-message"></div>
                 </div>
 
@@ -38,7 +38,7 @@
 
                 <div class="form__group">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="tucorreo@mail.com">
+                    <input type="text" name="email" id="email" placeholder="tucorreo@mail.com">
                     <div class="error-message"></div>
                 </div>
 
@@ -54,13 +54,13 @@
 
                 <div class="form__group">
                     <label for="fec-nac">Fecha de Nacimiento</label>
-                    <input type="date" name="fec-nac" id="fec-nac">
+                    <input type="text" name="fec-nac" id="fec-nac" placeholder="10-05-1999">
                     <div class="error-message"></div>
                 </div>
 
                 <div class="form__group">
                     <label for="telefono">Teléfono</label>
-                    <input type="text" name="telefono" id="telefono" maxlength="9" minlength="9" placeholder="444 22 55 66">
+                    <input type="number" name="telefono" id="telefono" maxlength="9" placeholder="444225566">
                     <div class="error-message"></div>
                 </div>
 
