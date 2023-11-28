@@ -21,6 +21,8 @@ form.addEventListener('submit', e => {
     validacionEmail(email);
     validacionProvincia(provincia);
     validacionFechaNac(fechaNac);
+    validacionTelefono(telefono);
+    validacionHoraVisita(horaVisita);
 });
 
 /*Agregue este evento para limpiar las alertas de errores*/ 
@@ -202,7 +204,7 @@ const validacionProvincia = (provincia) => {
 /*VALIDACION FECHA DE NACIMIENTO*/
 const validacionFechaNac = (fechaNac) => {
     let success = true;
-    let regex = /^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/;
+    let regex = /^(0?[1-9]|[1-2][0-9]|3[0-1])[-\/](0?[1-9]|1[0-2])[-\/]\d{4}$/;
 
     if(fechaNac.value.length == 0){
         setError(fechaNac, 'No debe estar vacío');
@@ -211,11 +213,71 @@ const validacionFechaNac = (fechaNac) => {
     }
     
     if(!regex.test(fechaNac.value)){
-        setError(fechaNac, 'Debe ser en el formato dd/mm/aaa o dd-mm-aaaa');
+        setError(fechaNac, 'Debe ser en el formato dd/mm/aaaa o dd-mm-aaaa');
         success = false;
     }
     
     if(success) {
         setSuccess(fechaNac);
+    }
+}
+
+/*VALIDACION TELEFONO*/
+const validacionTelefono = (telefono) => {
+    let success = true;
+    let regex = /^[6|7|8|9]\d{8}$/;
+
+    if(telefono.value.length == 0){
+        setError(telefono, 'No debe estar vacío');
+        success = false;
+        return;
+    }
+    
+    if(!regex.test(telefono.value)){
+        if(telefono.value.indexOf(6|7|8|9) != 0){
+            setError(telefono, 'No es un número válido, debe empezar por 6, 7, 8 o 9');
+            success = false;
+        }
+        if(telefono.value.length != 9){
+            setError(telefono, 'No es un número válido, debe contener 9 dígitos');
+            success = false;
+        }
+    }
+    
+    if(success) {
+        setSuccess(telefono);
+    }
+}
+
+/*VALIDACION HORA DE VISITA*/
+const validacionHoraVisita = (horaVisita) => {
+    let success = true;
+    let regex = /^(0[1-9]|1[0-9]|2[0-3])\:(0[1-9]|[1-5][0-9])$/;
+
+    if(horaVisita.value.length == 0){
+        setError(horaVisita, 'No debe estar vacío');
+        success = false;
+        return;
+    }
+    
+    if(!regex.test(horaVisita.value)){
+        if(horaVisita.value[0] > 2){
+            setError(horaVisita, 'No es una hora válida');
+            success = false;
+            console.log('hora mal')
+        }else if(horaVisita.value[3] > 5){
+            setError(horaVisita, 'No es una hora válida');
+            success = false;
+            console.log('minuto mal')
+        }else{
+            setError(horaVisita, 'No es una hora válida, solo se acepta formato militar');
+            success = false;
+            console.log('todo mal')
+        }
+    }
+
+    if(success) {
+        setSuccess(horaVisita);
+        console.log('success')
     }
 }

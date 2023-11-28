@@ -29,11 +29,6 @@ body {
     gap: 1rem;
 }
 
-.form__group {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
 input {
     margin-top: 0.1rem;
     font-family: inherit;
