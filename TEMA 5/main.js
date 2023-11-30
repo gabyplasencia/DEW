@@ -9,20 +9,39 @@ const provincia = document.getElementById('provincia');
 const fechaNac = document.getElementById('fec-nac');
 const telefono = document.getElementById('telefono');
 const horaVisita = document.getElementById('hora-visita');
+const intentos = document.getElementById('intentos');
+
+let cookie = document.cookie = "intentos = 0";
+let cookieArray = cookie.split("=");
+let numeroIntentos = parseInt(cookieArray[1]);
 
 /* El evento submit llamara a las validaciones*/
 form.addEventListener('submit', e => {
     e.preventDefault();
+    
+    numeroIntentos++;
+    if(numeroIntentos == 1) {
+        document.querySelector('.form__tries').classList.remove('hidden');
+        intentos.innerHTML = numeroIntentos + " vez";
+    }else {
+        intentos.innerHTML = numeroIntentos + " veces";
+    }
 
-    validacionNombre(nombre);
-    validacionApellidos(apellidos);
-    validacionEdad(edad);
-    validacionNIF(nif);
-    validacionEmail(email);
-    validacionProvincia(provincia);
-    validacionFechaNac(fechaNac);
-    validacionTelefono(telefono);
-    validacionHoraVisita(horaVisita);
+    let consent = window.confirm("¿Desea enviar el formulario?");
+
+    if(consent == true) {
+        validacionNombre(nombre);
+        validacionApellidos(apellidos);
+        validacionEdad(edad);
+        validacionNIF(nif);
+        validacionEmail(email);
+        validacionProvincia(provincia);
+        validacionFechaNac(fechaNac);
+        validacionTelefono(telefono);
+        validacionHoraVisita(horaVisita);
+    } else {
+        alert("No se envio el formulario");
+    }
 });
 
 /*Agregue este evento para limpiar las alertas de errores*/ 
@@ -234,7 +253,7 @@ const validacionTelefono = (telefono) => {
     }
     
     if(!regex.test(telefono.value)){
-        if(telefono.value.indexOf(6|7|8|9) != 0){
+        if(telefono.value[0] != 6|7|8|9){
             setError(telefono, 'No es un número válido, debe empezar por 6, 7, 8 o 9');
             success = false;
         }
@@ -261,15 +280,11 @@ const validacionHoraVisita = (horaVisita) => {
     }
     
     if(!regex.test(horaVisita.value)){
-        if(horaVisita.value[0] > 2){
+        if(horaVisita.value[0] > 2 || horaVisita.value[3] > 5){
             setError(horaVisita, 'No es una hora válida');
             success = false;
             console.log('hora mal')
-        }else if(horaVisita.value[3] > 5){
-            setError(horaVisita, 'No es una hora válida');
-            success = false;
-            console.log('minuto mal')
-        }else{
+        } else{
             setError(horaVisita, 'No es una hora válida, solo se acepta formato militar');
             success = false;
             console.log('todo mal')
