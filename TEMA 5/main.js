@@ -11,6 +11,7 @@ const telefono = document.getElementById('telefono');
 const horaVisita = document.getElementById('hora-visita');
 const intentos = document.getElementById('intentos');
 
+/*Para modificar los intentos, creo un array y paso a numero el valor de la cookie */
 let cookie = document.cookie = "intentos = 0";
 let cookieArray = cookie.split("=");
 let numeroIntentos = parseInt(cookieArray[1]);
@@ -19,6 +20,7 @@ let numeroIntentos = parseInt(cookieArray[1]);
 form.addEventListener('submit', e => {
     e.preventDefault();
     
+    /*Cada vez que se haga click en enviar se sumara un intento */
     numeroIntentos++;
     if(numeroIntentos == 1) {
         document.querySelector('.form__tries').classList.remove('hidden');
@@ -26,7 +28,7 @@ form.addEventListener('submit', e => {
     }else {
         intentos.innerHTML = numeroIntentos + " veces";
     }
-
+    
     let consent = window.confirm("¿Desea enviar el formulario?");
 
     if(consent == true) {
@@ -87,6 +89,11 @@ const toUpper = (element) => {
 const validacionNombre = (nombre) => {
     let success = true;
     let regex = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+    /*a-z permite letras minusculas
+      A-Z permite letras mayusculas
+      À-ÿ permite letras especiales
+      \s permite espacios en caso de que tenga dos nombres
+      y un minimo de 1 caracter y máximo de 40*/
 
     if(nombre.value.length == 0){
         setError(nombre, 'No debe estar vacío');
@@ -108,6 +115,7 @@ const validacionNombre = (nombre) => {
 const validacionApellidos = (apellidos) => {
     let success = true;
     let regex = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+    /*repeti la misma expresión que use con el nombre */
 
     if(apellidos.value.length == 0){
         setError(apellidos, 'No debe estar vacío');
@@ -129,6 +137,7 @@ const validacionApellidos = (apellidos) => {
 const validacionEdad = (edad) => {
     let success = true;
     let regex = /^\d{1,3}$/;
+    /*\d permite números y exige un minimo de 1 dígito y máximo de 3 */
 
     if(edad.value.length == 0){
         setError(edad, 'No debe estar vacío');
@@ -155,6 +164,8 @@ const validacionEdad = (edad) => {
 const validacionNIF = (nif) => {
     let success = true;
     const regex = /^\d{8}[a-zA-Z]$/;
+    /*\d permite números y exige 8 dígitos
+       a-zA-Z exige una letra minúscula o mayúscula */
 
     if(nif.value.length == 0){
         setError(nif, 'No debe estar vacío');
@@ -188,6 +199,10 @@ const validacionNIF = (nif) => {
 const validacionEmail = (email) => {
     let success = true;
     let regex = /^[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_](\.[a-zA-Z]{2,4}){1,2}$/;
+    /*[a-zA-Z0-9-_.]+ exige que esto se cumpla al menos una vez y permite letras, números y los caracteres -_.
+      @ no necesita \ para escribirse
+      [a-zA-Z0-9-_] repito el primero pero quito el punto
+      (\.[a-zA-Z]{2,4}){1,2} con los parentesis creo un grupo que debe empezar por un punto, solo acepta letras y tiene un minimo de 2 letras y máximo de 4, este grupo se puede repetir dos veces*/
 
     if(email.value.length == 0){
         setError(email, 'No debe estar vacío');
@@ -224,6 +239,10 @@ const validacionProvincia = (provincia) => {
 const validacionFechaNac = (fechaNac) => {
     let success = true;
     let regex = /^(0?[1-9]|[1-2][0-9]|3[0-1])[-\/](0?[1-9]|1[0-2])[-\/]\d{4}$/;
+    /*(0?[1-9]|[1-2][0-9]|3[0-1]) con el signo de interrogación indico que puede o no empezar por 0 y uso el condicional "|" para permitir números del 1 al 31 
+       [-\/] exige un "-" o "/"
+       (0?[1-9]|1[0-2])repito la primera expresion pero solo para números del 1 al 12
+       \d{4} exige 4 dígitos que serían el año*/
 
     if(fechaNac.value.length == 0){
         setError(fechaNac, 'No debe estar vacío');
@@ -245,6 +264,8 @@ const validacionFechaNac = (fechaNac) => {
 const validacionTelefono = (telefono) => {
     let success = true;
     let regex = /^[6|7|8|9]\d{8}$/;
+    /*[6|7|8|9] exijo que empiece por los números indicados
+      \d{8} seguido del primer número deben haber 8 dígitos más*/
 
     if(telefono.value.length == 0){
         setError(telefono, 'No debe estar vacío');
@@ -272,6 +293,8 @@ const validacionTelefono = (telefono) => {
 const validacionHoraVisita = (horaVisita) => {
     let success = true;
     let regex = /^(0[1-9]|1[0-9]|2[0-3])\:(0[1-9]|[1-5][0-9])$/;
+    /*Repito la expresión que use para la fecha pero en este caso
+      el 0 si es obligatorio y en vez de "-" o "/" se pide ":" */
 
     if(horaVisita.value.length == 0){
         setError(horaVisita, 'No debe estar vacío');
