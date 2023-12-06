@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UT5_Actividad 4</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    @property --mycolor {
+      syntax: "<color>";
+      inherits: true;
+      initial-value: red;
+    }
+
+    #cuadrado {
+      height: 40vh;
+      aspect-ratio: 1;
+      background-color: var(--mycolor);
+      transition: --mycolor 500ms;
+    }
+    #cuadrado:hover {
+      --mycolor: blue;
+    }
+
+    #cuadrado:focus {
+      --mycolor: orange;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .dentro, .fuera{
+      font-size: 3rem;
+      display: block;
+    }
+
+    .dentro.hide,
+    .fuera.hide {
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+
+<div id="cuadrado"><p class="dentro hide">raton dentro</p></div>
+<p class="fuera hide">raton afuera</p>
+
+<script>
+  window.onload = function(){
+      let cuadrado = document.getElementById('cuadrado');
+      let dentro = document.querySelector('.dentro');
+      let fuera = document.querySelector('.fuera');
+      
+      cuadrado.addEventListener('mouseover', () => {
+          dentro.classList.remove('hide');
+          fuera.classList.add('hide');
+      });
+      cuadrado.addEventListener('mouseout', () => {
+          fuera.classList.remove('hide');
+          dentro.classList.add('hide');
+      });
+
+      cuadrado.addEventListener('click', () => {
+          if(cuadrado.style.backgroundColor =='var(--mycolor)'){
+              cuadrado.style.backgroundColor = 'purple';
+          }else{
+              cuadrado.style.backgroundColor ='var(--mycolor)';
+          }
+      });
+  }
+</script>
+</body>
+</html>
