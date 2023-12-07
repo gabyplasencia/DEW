@@ -7,12 +7,29 @@
 }
 
 body {
+    min-height: 100vh;
     display: grid;
     place-items: center;
-    background-color: rgb(58, 192, 118);
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: rgb(175, 225, 105);
     font-family: 'Kalam';
     color: rgba(54, 7, 7, 0.755);
     font-weight: 700;
+    cursor: url('brushes/brush.svg'), auto;
+    position: relative;
+    isolation: isolate; 
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.2;
+    background-image: url(brushes/bg.svg);
+    background-size: 30rem;
+    background-repeat: repeat;
 }
 
 .container {
@@ -30,7 +47,6 @@ body {
 h1 {
     font-family: 'Shizuru';
     color: white;
-    margin-block: 2rem;
     font-size: 3rem;
     text-align: center;
 }
@@ -57,50 +73,62 @@ h1 {
 
 #blanco {
     background-color: white;
+    cursor: url('brushes/white.svg'), auto;
 }
 
 #negro {
     background-color: black;
+    cursor: url('brushes/black.svg'), auto;
 }
 
 #gris {
     background-color: rgb(169, 168, 168);
+    cursor: url('brushes/gray.svg'), auto;
 }
 
 #carne {
     background-color: rgb(254, 221, 159);
+    cursor: url('brushes/skin.svg'), auto;
 }
 
 #amarillo {
     background-color: rgb(245, 229, 10);
+    cursor: url('brushes/yellow.svg'), auto;
 }
 
 #azul {
     background-color: rgb(0, 119, 255);
+    cursor: url('brushes/blue.svg'), auto;
 }
 
 #rojo {
     background-color: rgb(199, 9, 9);
+    cursor: url('brushes/red.svg'), auto;
 }
 
 #purpura {
     background-color: rgb(109, 20, 109);
+    cursor: url('brushes/purple.svg'), auto;
 }
 
 #verde {
     background-color: rgb(26, 151, 26);
+    cursor: url('brushes/green.svg'), auto;
 }
 
 #naranja {
     background-color: rgb(255, 132, 0);
+    cursor: url('brushes/orange.svg'), auto;
 }
 
 #rosa {
     background-color: rgb(194, 101, 157);
+    cursor: url('brushes/pink.svg'), auto;
 }
 
 #marron {
     background-color: rgb(141, 90, 23);
+    cursor: url('brushes/brown.svg'), auto;
 }
 
 table, tr, td {
@@ -120,4 +148,5 @@ td {
 
 #pincel {
     font-size: 1.2rem;
+    text-align: center;
 }
