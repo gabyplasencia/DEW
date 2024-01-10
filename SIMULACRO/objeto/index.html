@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simulacro</title>
+</head>
+<body>
+    <div class="container">
+        <form name="formulario" id="form" action="/">
+
+            <div class="form__group">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="José">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos" placeholder="Gómez Pérez">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="edad">Edad</label>
+                <input type="text" name="edad" id="edad" maxlength="3" placeholder="25">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="nif">NIF</label>
+                <input type="text" name="nif" id="nif" placeholder="42668895H">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" id="email" placeholder="tucorreo@mail.com">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="provincia">Provincia</label>
+                <select name="provincia" id="provincia">
+                    <option value="0" selected="selected">Seleccione Provincia</option>
+                    <option value="C">A Coruña</option>
+                    <option value="LU">Lugo</option>
+                    <option value="OU">Ourense</option>
+                    <option value="OU">Pontevedra</option>
+                </select>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="fec-nac">Fecha de Nacimiento</label>
+                <input type="text" name="fec-nac" id="fec-nac" placeholder="10-05-1999">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="telefono">Teléfono</label>
+                <input type="text" name="telefono" id="telefono" placeholder="666225566">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form__group">
+                <label for="hora-visita">Hora de Visita</label>
+                <input type="text" name="hora-visita" id="hora-visita" placeholder="16:00">
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="form__btn-group">
+                <button class="button" type="submit">Enviar</button>
+                <button class="button" type="reset">Limpiar</button>
+            </div>
+
+            <p class="form__tries hidden">Has intentado enviar el formulario <span id="intentos"></span></p>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
