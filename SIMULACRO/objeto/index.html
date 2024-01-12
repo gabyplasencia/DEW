@@ -4,79 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simulacro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <form name="formulario" id="form" action="/">
+        <div class="sidebar">
+            <!-- Bloque 1: Paciente nuevo -->
+            <div class="create-patient-form">
+                <h2 style="font-size: 18px;">Paciente nuevo</h2>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="Nombre" required>
 
-            <div class="form__group">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" placeholder="José">
-                <div class="error-message"></div>
-            </div>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" value="Apellidos" required>
 
-            <div class="form__group">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos" id="apellidos" placeholder="Gómez Pérez">
-                <div class="error-message"></div>
-            </div>
+                    <label for="nhc">NHC:</label>
+                    <input type="text" id="nhc" name="nhc" value = "NHC" required>
 
-            <div class="form__group">
-                <label for="edad">Edad</label>
-                <input type="text" name="edad" id="edad" maxlength="3" placeholder="25">
-                <div class="error-message"></div>
-            </div>
+                    <label for="sexo">Sexo:</label>
+                    <input type="text" id="sexo" name="sexo" value = "Sexo" required>
 
-            <div class="form__group">
-                <label for="nif">NIF</label>
-                <input type="text" name="nif" id="nif" placeholder="42668895H">
-                <div class="error-message"></div>
-            </div>
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
 
-            <div class="form__group">
-                <label for="email">E-mail</label>
-                <input type="text" name="email" id="email" placeholder="tucorreo@mail.com">
-                <div class="error-message"></div>
+                    <button id="crearnuevo">Crear paciente</button><!--Recuerda bloquear su acción por defecto -->
+                </form>
             </div>
-
-            <div class="form__group">
-                <label for="provincia">Provincia</label>
-                <select name="provincia" id="provincia">
-                    <option value="0" selected="selected">Seleccione Provincia</option>
-                    <option value="C">A Coruña</option>
-                    <option value="LU">Lugo</option>
-                    <option value="OU">Ourense</option>
-                    <option value="OU">Pontevedra</option>
-                </select>
-                <div class="error-message"></div>
-            </div>
-
-            <div class="form__group">
-                <label for="fec-nac">Fecha de Nacimiento</label>
-                <input type="text" name="fec-nac" id="fec-nac" placeholder="10-05-1999">
-                <div class="error-message"></div>
-            </div>
-
-            <div class="form__group">
-                <label for="telefono">Teléfono</label>
-                <input type="text" name="telefono" id="telefono" placeholder="666225566">
-                <div class="error-message"></div>
-            </div>
-
-            <div class="form__group">
-                <label for="hora-visita">Hora de Visita</label>
-                <input type="text" name="hora-visita" id="hora-visita" placeholder="16:00">
-                <div class="error-message"></div>
-            </div>
+        </div>
+        <div class="main-content">
             
-            <div class="form__btn-group">
-                <button class="button" type="submit">Enviar</button>
-                <button class="button" type="reset">Limpiar</button>
+        <!-- Bloque 2: Visualizar y Modificar Paciente -->
+            <div>
+                <div class="section-header">
+                    <h2 style="font-size: 18px;">Paciente actual</h2>
+                </div>
+                <form>
+                    <textarea id="datospaciente" name="datospaciente" rows="8" placeholder="Paciente actual"></textarea>
+
+                <!-- Contenedor para los botones de modificación -->
+                <div class="modification-buttons">
+                    <h2 style="font-size: 16px;">Modificar:</h2>
+                    <button type="button" id="modificarNHC">NHC</button>
+                    <button type="button" id="modificarNombre">Nombre</button>
+                    <button type="button" id="modificarApellidos">Apellidos</button>
+                    <button type="button" id="modificarSexo">Sexo</button>
+                    <button type="button" id="modificarFecha">Fecha de Nacimiento</button>
+                </div>
+                </form>
             </div>
 
-            <p class="form__tries hidden">Has intentado enviar el formulario <span id="intentos"></span></p>
+            <!-- Bloque 3: Historial completo -->
+            <div>
+                <div class="section-header">
+                    <h2 style="font-size: 18px;">Historial completo</h2>
+                </div>
+                <textarea id="historial" name="historial" rows="10" placeholder="Historial completo"></textarea>
+            <!-- Botones para el historial -->
+            <div>
+                <button type="button" id="agregarDxyTto">Agregar diagnóstico y tratamiento</button>
+                <button type="button" id="modificarEpisodio">Modificar Episodio</button>
+                <button type="button" id="limpiar">Limpiar ventana</button>
             </div>
-        </form>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
