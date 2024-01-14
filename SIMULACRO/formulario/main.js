@@ -12,7 +12,7 @@ function Paciente(nhc, nombre, apellidos, fecNac, sexo) {
     //                 ' fecha de nacimiento: ' + this.fecNac + ' sexo: ' + this.sexo);
 
     this.modificarNhc = function() {
-        let nhc = window.prompt("Introduzca el nuevo NHC:")
+        let nhc = window.prompt("Introduzca el nuevo NHC:");
         let consent = window.confirm("Se modificará el NHC ¿Desea continuar?");
 
         if(consent == true) {
@@ -24,7 +24,7 @@ function Paciente(nhc, nombre, apellidos, fecNac, sexo) {
     };
 
     this.modificarNombre = function() {
-        let nombre = window.prompt("Introduzca el nuevo nombre:")
+        let nombre = window.prompt("Introduzca el nuevo nombre:");
         let consent = window.confirm("Se modificará el nombre ¿Desea continuar?");
 
         if(consent == true) {
@@ -36,7 +36,7 @@ function Paciente(nhc, nombre, apellidos, fecNac, sexo) {
     };
 
     this.modificarApellidos = function() {
-        let apellidos = window.prompt("Introduzca los nuevos apellidos:")
+        let apellidos = window.prompt("Introduzca los nuevos apellidos:");
         let consent = window.confirm("Se modificarán los apellidos ¿Desea continuar?");
 
         if(consent == true) {
@@ -48,7 +48,7 @@ function Paciente(nhc, nombre, apellidos, fecNac, sexo) {
     };
 
     this.modificarFecNac = function() {
-        let fecNac = window.prompt("Introduzca la nueva fecha de nacimiento:")
+        let fecNac = window.prompt("Introduzca la nueva fecha de nacimiento:");
         let consent = window.confirm("Se modificará la fecha de nacimiento ¿Desea continuar?");
 
         if(consent == true) {
@@ -60,7 +60,7 @@ function Paciente(nhc, nombre, apellidos, fecNac, sexo) {
     };
 
     this.modificarSexo = function() {
-        let sexo = window.prompt("Introduzca el sexo:")
+        let sexo = window.prompt("Introduzca el sexo:");
         let consent = window.confirm("Se modificará el sexo ¿Desea continuar?");
 
         if(consent == true) {
@@ -72,19 +72,26 @@ function Paciente(nhc, nombre, apellidos, fecNac, sexo) {
     };
 
     this.crearEpisodio = function(){
-        let id = window.prompt("ID del episodio:")
-        let fecha = window.prompt("Fecha:")
-        let diagnostico = window.prompt("Diagnóstico:")
-        let tratamiento = window.prompt("Tratamiento:")
-        let medico = window.prompt("Médico responsable:")
+        let id = window.prompt("ID del episodio:");
+        let fecha = window.prompt("Fecha:");
+        let diagnostico = window.prompt("Diagnóstico:");
+        let tratamiento = window.prompt("Tratamiento:");
+        let medico = window.prompt("Médico responsable:");
 
         let episodio = {id, fecha, diagnostico, tratamiento, medico};
         this.historial.push(episodio);
     };
 
     this.modificarEpisodio = function(){
+        let idSelected = window.prompt("ID del episodio a modificar:");
         let currentEpisodio = this.historial.find(episodio => episodio.id === idSelected);
+
         if(currentEpisodio){
+            let fechaNew = window.prompt("Fecha:");
+            let diagnosticoNew = window.prompt("Diagnóstico:");
+            let tratamientoNew = window.prompt("Tratamiento:");
+            let medicoNew = window.prompt("Médico responsable:");
+
             currentEpisodio.fecha = fechaNew;
             currentEpisodio.diagnostico = diagnosticoNew;
             currentEpisodio.tratamiento = tratamientoNew;
@@ -98,4 +105,5 @@ function Paciente(nhc, nombre, apellidos, fecNac, sexo) {
         console.log(this.historial);
     };
 }
+
 

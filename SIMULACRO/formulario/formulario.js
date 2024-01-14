@@ -33,10 +33,28 @@ form.addEventListener('submit', e => {
     mostrarDatos(nhcInput, nombreInput, apellidosInput, fechaNacimientoInput, sexoInput);
 });
 
+limpiar.addEventListener('click', e => {
+    datosPaciente.innerHTML= " ";
+    historialForm.innerHTML= " ";
+    form.reset();
+    console.log('limpiar')
+});
+
 const mostrarDatos = (nhc, nombre, apellidos, fecNac, sexo) => {
     datosPaciente.innerHTML = 'NHC:' + nhc + 
     '<br>Nombre: ' + nombre + '<br>Apellidos: ' + apellidos + 
     '<br>Fecha de nacimiento: ' + fecNac + '<br>Sexo: ' + sexo;
+};
+
+const mostrarEpisodios = (historial) => {
+    historialForm.innerHTML ="";
+    historial.forEach(h => {
+        historialForm.innerHTML += '<br>ID:' + h.id + 
+        '<br>Fecha: ' + h.fecha + '<br>Diagnostico: ' + h.diagnostico + 
+        '<br>Tratamiento: ' + h.tratamiento + '<br>Médico: ' + h.medico + 
+        '<br>**********----------------------**********';
+    })
+
 };
 
 modNHC.addEventListener('click', () => {
@@ -64,9 +82,16 @@ modSexo.addEventListener('click', () => {
     mostrarDatos(paciente.nhc, paciente.nombre, paciente.apellidos, paciente.fecNac, paciente.sexo);
 });
 
-// agregarEpisodio.addEventListener('click', () => {
-//     paciente.crearEpisodio();
-//     historialForm.innerHTML = paciente.historial.toString();
-// });
+agregarEpisodio.addEventListener('click', () => {
+    paciente.crearEpisodio();
+    mostrarEpisodios(paciente.historial);
+});
+
+modEpisodio.addEventListener('click', () => {
+    paciente.modificarEpisodio();
+    mostrarEpisodios(paciente.historial);
+});
+
+
 
 
