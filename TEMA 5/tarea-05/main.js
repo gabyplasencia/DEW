@@ -198,7 +198,7 @@ const validacionNIF = (nif) => {
 /*VALIDACION EMAIL*/
 const validacionEmail = (email) => {
     let success = true;
-    let regex = /^[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_](\.[a-zA-Z]{2,4}){1,2}$/;
+    let regex = /^[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_]+(\.[a-zA-Z]{2,4}){1,2}$/;
     /*[a-zA-Z0-9-_.]+ exige que esto se cumpla al menos una vez y permite letras, números y los caracteres -_.
       @ no necesita \ para escribirse
       [a-zA-Z0-9-_] repito el primero pero quito el punto
